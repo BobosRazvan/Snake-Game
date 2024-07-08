@@ -45,6 +45,12 @@ class Snake:
         new_turtle.setposition(self.segments[-1].position())
         self.segments.append(new_turtle)
 
+    def reset(self):
+        for seg in self.segments:
+            seg.goto(1000,1000)
+        self.segments.clear()
+        self.create_snake()
+
 
     def up(self):
         if self.segments[0].heading() != 270:
